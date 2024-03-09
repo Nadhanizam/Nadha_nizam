@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style1.css">
+  </head>
+  <body>
+    <div class="head">
+    <h1>Contact Us</h1></div>
+    <form action="post" name="f1" onsubmit="return validate()" class="contain" >
+    <table>
+      <tr><th><pre style="font-size: 16px;">First Name:</pre></th>
+        <td> <input type="text" name="name">
+        <span id="namelocation" style="color: red;"></span>
+        </td> </tr>
+
+        <tr><th><pre style="font-size: 16px;">Last Name :</pre></th>
+          <td> <input type="text" name="lname">
+          <span id="lnamelocation" style="color: red;"></span>
+          </td> </tr>
+
+          <tr><th><pre style="font-size: 16px;">E-Mail    :</pre></th>
+            <td> <input type="text" name="email">
+            <span id="emaillocation" style="color: red;"></span>
+            </td> </tr>
+
+            <tr><th><pre style="font-size: 16px;">Phone No  :</pre></th>
+              <td> <input type="text" name="phone">
+              <span id="phonelocation" style="color: red;"></span>
+              </td> </tr>
+
+              <tr><th><pre style="font-size: 16px;">Message   :</pre></th>
+                <td> <textarea rows="15" cols="50"></textarea>
+                </td></tr>  
+          <tr>
+            <th></th>
+          <th><input type="submit" value="Submit"></th>
+         </tr>
+    </table>
+  </form>
+    <script>
+        function validate(){
+          var name=document.f1.name.value;
+          var lname=document.f1.lname.value;
+          var email=document.f1.email.value;
+          var phone=document.f1.phone.value;
+          var status=false;
+          if(name==""){
+            document.getElementById("namelocation").innerHTML="Please enter first name";
+            status=false;
+          }
+          else{
+            document.getElementById("namelocation").innerHTML="<img src=images/icon2.png>";
+            status=true;
+          }
+          if(lname==""){
+            document.getElementById("lnamelocation").innerHTML="Please enter last name";
+            status=false;
+
+          }
+          else{
+            document.getElementById("lnamelocation").innerHTML="<img src=images/icon2.png>";
+            status=true;
+          }
+          if(email.indexOf("@") == -1 || email.length < 6){
+          document.getElementById("emaillocation").innerHTML="Email is not valid";
+          status=false;
+       }  
+          else{
+            document.getElementById("emaillocation").innerHTML="<img src=images/icon2.png>";
+            status=true;
+          }
+          if(isNaN(phone) || phone.length != 10){
+         document.getElementById("phonelocation").innerHTML="Incorrect Phone No";
+         status=false;
+        }
+        else{
+          document.getElementById("phonelocation").innerHTML="<img src=images/icon2.png>";
+          status=true;
+        }
+            return status;
+        }
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>News</title>
+  <link rel="stylesheet" href="css/style2.css">
+</head>
+
+<body>
+  <h1><img src="images/icon.jpg" style="width: 8%;height:50px;float:right;margin:0px;">News</h1>
+  <div id="ani" class="box"><span style="font-size:30px ;"><img src="images/offer.png"></span></div>
+
+  <p style="margin-top: 95px;font-weight: bold;font-size: 20px;">Get 10% off Institute service of your choice!</p>
+
+  <p>We’re offering all Institute members a voucher for <span id="off">10% off </span> service* <span id="off">redeemed by 31st October 2022!</span> </p>
+
+  <p>Simply fill out our form <a href="">here</a> by the end of the year to receive your voucher.</p>
+  <p>Unsure which service you could benefit from? We offer a range of professional services and training options;<span id="off"> contact us today!</span></p>
+
+  <p>We offer expert advice and guidance across the world of public consultation and engagement, including advisory services, training, risk evaluations, briefings and quality assurance of consultations.</p>
+ 
+  <p>Westview Cambodian International Institute is the great extension to secondary education by the passionate
+    leadership team of Learning Jungle International Institute offering educational services only from
+    elementary program. With the strong support from parents, students, staff and the Ministry of Education, Youth and
+    Sport, Westview Cambodian International School is created to offer the International Secondary program built from
+    the world renowned standards of education, American Common
+    Core Standards (ACCS) and the Khmer language, history and culture into one unique curriculum from adults.</p>
+    
+   
+    <h2 style="text-align:center;color: brown;background-color: rgb(180, 158, 125);padding: 10px;">Gallery</h2>
+  <div class="container" style="margin-left: 50px;">
+    <div class="mySlides">
+      <div class="numbertext">1 / 3</div>
+      <img src="images/img3.jpg" style="width:95%" height="400px">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 3</div>
+      <img src="images/img4.jpg" style="width:95%" height="400px">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 3</div>
+      <img src="images/img5.jpg" style="width:95%" height="400px">
+    </div>
+
+
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+    <div class="row">
+      <div class="column" style="margin-left:280px ;">
+        <img class="demo cursor" src="images/img3.jpg" style="width:100%" height="150px" onclick="currentSlide(1)" alt="Group Activity">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="images/img4.jpg" style="width:100%" onclick="currentSlide(2)" alt="Music Festival">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="images/img5.jpg" style="width:100%" onclick="currentSlide(3)" alt="Discussion Work">
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+  </script>
+
+</body>
+
+</html>
